@@ -1,15 +1,17 @@
 const routes = require("./controllers")
 const sequelize = require("./config/connection")
 const path = require('path')
-const helpers = require('./utils/helper')
+const helpers = require('./utils/helpers')
 const express = require('express');
 const exphbs  = require('express-handlebars');
+// const session = require('express-session'); must go before const SequelizeStore = require('connect-session-sequelize')(session.Store); or your code wont work... 
+const session = require('express-session');
+
 const SequelizeStore = require('connect-session-sequelize')(session.Store);
 
-// ask teacher to explain in depth...
+// 
 const hbs = exphbs.create({ helpers });
 
-const session = require('express-session');
 
 const app = express();
 const PORT = process.env.PORT || 3001
