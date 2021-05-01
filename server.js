@@ -9,7 +9,7 @@ const session = require('express-session');
 
 const SequelizeStore = require('connect-session-sequelize')(session.Store);
 
-// 
+
 const hbs = exphbs.create({ helpers });
 
 
@@ -34,7 +34,7 @@ app.use(express.static(path.join(__dirname, "public")));
 
 app.engine('handlebars', hbs.engine);
 app.use(routes);
-
+app.set('view engine', 'handlebars');
 // turn on connection....... make sure you connect to MYSQL
 sequelize.sync({ force: false }).then(() => {
   app.listen(PORT, () => console.log('Im listening '));
