@@ -1,8 +1,8 @@
-// const seedPosts = require('./post');
-// const seedUsers = require('./user');
+const seedPosts = require('./post');
+const seedUsers = require('./user');
 const seedComments = require('./comment');
 
-const sequelize = require('../config/connection');
+const sequelize = require('../config/connection')
 
 const seedAll = async () => {
   await sequelize.sync({ force: true });
@@ -11,7 +11,7 @@ const seedAll = async () => {
     console.log('\n dont with users\n');
   
   await seedPosts();
-    console.log('\n done with postd\n');
+    console.log('\n done with post\n');
 
   await seedComments();
     console.log('Done with comments ');
