@@ -1,0 +1,26 @@
+{
+  "name": "dont-forget-to-blogin-then-blogout-",
+  "version": "1.0.0",
+  "description": "Tech Blog",
+  "main": "server.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node server.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Chapstick24/Dont-forget-to-BlogIn-then-BlogOut-.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/Chapstick24/Dont-forget-to-BlogIn-then-BlogOut-/issues"
+  },
+  "homepage": "https://github.com/Chapstick24/Dont-forget-to-BlogIn-then-BlogOut-#readme",
+  "dependencies": {
+    "dotenv": "^8.2.0",
+    "express": "^4.17.1",
+    "express-handlebars": "^5.3.0",
+    "sequelize": "^6.6.2"
+  }
+}
