@@ -4,7 +4,7 @@ const withAuth = require('../../utils/auth');
 
 router.get('/', (req, res) => {
     Comment.findAll({})
-      .then(dbCommentData => res.json(dbCommentData))
+      .then(commData => res.json(commData))
       .catch(err => {
         console.log(err);
         res.status(500).json(err);
