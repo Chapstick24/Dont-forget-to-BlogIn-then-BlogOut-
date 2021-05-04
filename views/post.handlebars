@@ -10,19 +10,19 @@
       {{post.post_content}}
     </div>
   </article>
-  {{#if comment.comment_text}}
+  {{#if comment_text}}
     <section class="card">
       <div class="card-header">
         <h3>Comments</h3>
       </div>
       <div class="card-body">
-        {{#each comment_text}}
+        {{#each comments as |comment_text|}}
           <div>
             <p>
               {{body}}
             </p>
             <p>
-              &mdash; {{user.username}}, {{format_date createdAt}}
+              &mdash; {{user.username}}, on {{format_date createdAt}}
             </p>
           </div>
         {{/each}}
@@ -32,11 +32,15 @@
   <form id="new-comment-form" class="card">
     <div class="card-header">
       <h3>Add New Comment</h3>
-    </div>
+      </div>
+
     <div class="card-body">
       <input type="hidden" name="post-id" value="{{post.id}}" />
+      
       <label class="form-label" for="comment-body">Comment</label>
+      
       <textarea name="comment-body" class="form-input"></textarea>
+      
       <button type="submit" class="btn">Submit</button>
     </div>
   </form>
