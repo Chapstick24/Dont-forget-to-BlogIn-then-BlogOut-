@@ -10,16 +10,20 @@
       {{post.post_content}}
     </div>
   </article>
-  {{#if comment_text}}
+  {{!-- {{#each post.comments |comment|}}
+<div>hello</div>
+  {{/each}} --}}
+  {{!-- {{#if comment_text}} --}}
+  {{#if post.comments}}
     <section class="card">
       <div class="card-header">
         <h3>Comments</h3>
       </div>
       <div class="card-body">
-        {{#each comments as |comment_text|}}
+        {{#each post.comments as |comment|}}
           <div>
             <p>
-              {{body}}
+              {{comment.comment_text}}
             </p>
             <p>
               &mdash; {{user.username}}, on {{format_date createdAt}}
@@ -45,4 +49,4 @@
     </div>
   </form>
 
-  <script src="../public/javascript/post-comments.js"></script>
+  <script src="/javascript/post-comments.js"></script>

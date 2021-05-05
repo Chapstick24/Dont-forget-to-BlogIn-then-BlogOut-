@@ -46,6 +46,7 @@ router.get('/', (req, res) => {
         email: req.body.email
       }
     }).then(userData => {
+      console.log(req.body)
       if (!userData) {
         res.status(400).json({ message: 'email doesnt match!' });
         return;

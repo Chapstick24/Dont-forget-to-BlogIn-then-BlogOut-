@@ -42,8 +42,16 @@ router.get('/', (req, res) => {
 
   router.get('/post/:id', async (req, res) =>{
     try{
-    const post = await Post.findByPk(req.params.id, {include: [User, {model: Comment}]})
+    const post = await Post.findByPk(req.params.id, { include: [
+      User,
+      {
+        model: Comment,
+        include: [User],
+      },
+    ],})
     const postData = post.get({plain: true})
+    console.log(post.comments[0].comment_text)
+    console.log(typeof post.comments)
     res.render("post", {post:postData})
     }
     catch(err){

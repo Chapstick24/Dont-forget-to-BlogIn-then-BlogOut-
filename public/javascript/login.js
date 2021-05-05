@@ -4,6 +4,7 @@ const loginFormHandler = async (event) => {
   // Collect values from the login form
   const email = document.querySelector('#email-login').value.trim();
   const password = document.querySelector('#password-login').value.trim();
+  console.log("this is a test" + email + password)
 
   if (email && password) {
     // Send a POST request to the API endpoint
@@ -14,6 +15,7 @@ const loginFormHandler = async (event) => {
     });
 
     if (response.ok) {
+      console.log("you did it")
       // If successful, redirect the browser to the profile page
       document.location.replace('/dashboard');
     } else {
